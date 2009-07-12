@@ -1,0 +1,12 @@
+plugins:
+  - module: Subscription::Config
+    config:
+      feed:
+        - url: script:./scrape_ngircd.pl --last-modified out/ngircd.xml
+  - module: CustomFeed::Script
+  - module: Publish::Feed
+    config:
+      format: Atom
+      dir: out
+      filename: ngircd.xml
+
