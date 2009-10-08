@@ -1,0 +1,12 @@
+plugins:
+  - module: Subscription::Config
+    config:
+      feed:
+        - url: script:./scrape_rikei.pl
+  - module: CustomFeed::Script
+  - module: Publish::Feed
+    config:
+      format: Atom
+      dir: out
+      filename: rikei.xml
+
